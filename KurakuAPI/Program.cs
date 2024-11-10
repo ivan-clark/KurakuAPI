@@ -1,4 +1,7 @@
 using DataAccess;
+using KurakuAPI.Models;
+using KurakuAPI.Services;
+using KurakuAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +12,7 @@ using Swashbuckle.AspNetCore.Filters;
 #region OData Model Declarations
 
 var modelBuilder = new ODataConventionModelBuilder();
+modelBuilder.EntitySet<ProfileModel>("Profile");
 modelBuilder.EnableLowerCamelCase();
 
 #endregion
@@ -42,7 +46,7 @@ builder.Services.AddSwaggerGen(options =>
 
 #region Dependency Registrations
 
-
+builder.Services.AddScoped<IProfileService, ProfileService>();
 
 #endregion
 
