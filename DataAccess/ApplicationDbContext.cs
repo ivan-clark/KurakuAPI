@@ -10,4 +10,8 @@ public class ApplicationDbContext : IdentityDbContext
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
     public virtual DbSet<Profile> Profiles { get; set; }
+
+    public virtual DbSet<Itinerary> Itineraries { get; set; }
+
+    public virtual DbSet<Activity> Activities { get; set; }
 }

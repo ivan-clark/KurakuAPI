@@ -13,6 +13,8 @@ using Swashbuckle.AspNetCore.Filters;
 
 var modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntitySet<ProfileModel>("Profile");
+modelBuilder.EntitySet<ActivityModel>("Activity");
+modelBuilder.EntitySet<ItineraryModel>("Itinerary");
 modelBuilder.EnableLowerCamelCase();
 
 #endregion
@@ -47,6 +49,8 @@ builder.Services.AddSwaggerGen(options =>
 #region Dependency Registrations
 
 builder.Services.AddScoped<IProfileService, ProfileService>();
+builder.Services.AddScoped<IActivityService, ActivityService>();
+builder.Services.AddScoped<IItineraryService, ItineraryService>();
 
 #endregion
 
