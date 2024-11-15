@@ -14,4 +14,10 @@ public class ApplicationDbContext : IdentityDbContext
     public virtual DbSet<Itinerary> Itineraries { get; set; }
 
     public virtual DbSet<Activity> Activities { get; set; }
+
+    public virtual DbSet<Flight> Flights { get; set; }
+
+    public virtual DbSet<Accomodation> Accomodations { get; set; }
+
+    public virtual DbSet<Transportation> Transportations { get; set; }
 }

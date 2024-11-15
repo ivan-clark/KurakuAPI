@@ -15,6 +15,9 @@ var modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntitySet<ProfileModel>("Profile");
 modelBuilder.EntitySet<ActivityModel>("Activity");
 modelBuilder.EntitySet<ItineraryModel>("Itinerary");
+modelBuilder.EntitySet<FlightModel>("Flight");
+modelBuilder.EntitySet<AccomodationModel>("Accomodation");
+modelBuilder.EntitySet<TransportationModel>("Transportation");
 modelBuilder.EnableLowerCamelCase();
 
 #endregion
@@ -51,6 +54,9 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IActivityService, ActivityService>();
 builder.Services.AddScoped<IItineraryService, ItineraryService>();
+builder.Services.AddScoped<IFlightService, FlightService>();
+builder.Services.AddScoped<IAccomodationService, AccomodationService>();
+builder.Services.AddScoped<ITransportationService, TransportationService>();
 
 #endregion
 

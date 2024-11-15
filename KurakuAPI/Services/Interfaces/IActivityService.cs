@@ -1,5 +1,4 @@
-﻿using DataAccess.Entities;
-using KurakuAPI.Models;
+﻿using KurakuAPI.Models;
 
 namespace KurakuAPI.Services.Interfaces;
 
