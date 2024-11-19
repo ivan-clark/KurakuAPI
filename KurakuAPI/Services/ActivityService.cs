@@ -17,7 +17,6 @@ public class ActivityService(ApplicationDbContext dbContext) : IActivityService
             Id = a.Id,
             Name = a.Name,
             Description = a.Description,
-            Itinerary = a.Itinerary,
         });
     }
 }
