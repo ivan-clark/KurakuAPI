@@ -28,6 +28,7 @@ public class FlightService(ApplicationDbContext dbContext) : IFlightService
             ArrivalTime = a.ArrivalTime,
             FromLocation = a.FromLocation,
             ToLocation = a.ToLocation,
+            ItineraryId = a.Itinerary.Id,
         });
     }
 

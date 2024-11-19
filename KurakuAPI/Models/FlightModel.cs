@@ -20,5 +20,5 @@ public class FlightModel
 
     public long ItineraryId { get; set; }
 
-    public Itinerary Itinerary { get; set; }
+    public Itinerary? Itinerary { get; set; }
 }

@@ -19,7 +19,7 @@ public class FlightController(IFlightService flightService, IItineraryService it
         return flightService.GetFlights();
     }
 
-    [HttpPost("/Flight/CreateFlight")]
+    [HttpPost("api/Flight/CreateFlight")]
     public IActionResult CreateFlight ([FromBody]FlightModel model)
     {
         try
@@ -40,7 +40,7 @@ public class FlightController(IFlightService flightService, IItineraryService it
         }
     }
 
-    [HttpPut("/Flight/UpdateFlight/{id}")]
+    [HttpPut("api/Flight/UpdateFlight/{id}")]
     public IActionResult UpdateFlight (long id,[FromBody] FlightModel model)
     {
         try
@@ -65,7 +65,7 @@ public class FlightController(IFlightService flightService, IItineraryService it
         }
     }
 
-    [HttpDelete("/Flight/DeleteFlight/{id}")]
+    [HttpDelete("api/Flight/DeleteFlight/{id}")]
     public IActionResult DeleteFlight (long id)
     {
         try
