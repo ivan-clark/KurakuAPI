@@ -19,7 +19,7 @@ public class FlightController(IFlightService flightService, IItineraryService it
         return flightService.GetFlights();
     }
 
-    [HttpPost("/CreateFlight")]
+    [HttpPost("/Flight/CreateFlight")]
     public IActionResult CreateFlight ([FromBody]FlightModel model)
     {
         try
@@ -36,12 +36,11 @@ public class FlightController(IFlightService flightService, IItineraryService it
         }
         catch (Exception ex)
         {
-            return StatusCode(500, "An error occurred while creating the flight.");
+            return StatusCode(500, ex.Message);
         }
-        
     }
 
-    [HttpPost("/UpdateFlight/{id}")]
+    [HttpPut("/Flight/UpdateFlight/{id}")]
     public IActionResult UpdateFlight (long id,[FromBody] FlightModel model)
     {
         try
@@ -62,11 +61,11 @@ public class FlightController(IFlightService flightService, IItineraryService it
         }
         catch (Exception ex)
         {
-            return StatusCode(500, "An error occurred while updating the flight.");
+            return StatusCode(500, ex.Message);
         }
     }
 
-    [HttpPost("/DeleteFlight/{id}")]
+    [HttpDelete("/Flight/DeleteFlight/{id}")]
     public IActionResult DeleteFlight (long id)
     {
         try
@@ -82,7 +81,7 @@ public class FlightController(IFlightService flightService, IItineraryService it
         }
         catch (Exception ex)
         {
-            return StatusCode(500, "An error occurred while updating the flight.");
+            return StatusCode(500, ex.Message);
         }
     }
 }
